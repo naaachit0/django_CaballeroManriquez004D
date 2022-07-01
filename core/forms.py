@@ -61,12 +61,14 @@ class ClienteForm(forms.ModelForm):
 
     class Meta:
         model = Cliente
-        fields = ['rutCliente', 'nombreCliente', 'apellidoCliente', 'telefonoCliente']
+        fields = ['rutCliente', 'nombreCliente', 'apellidoCliente', 'telefonoCliente', 'correoCliente', 'direccionCliente']
         labels = {
             'rutCliente' : 'RUT CLIENTE',
             'nombreCliente' : 'NOMBRE CLIENTE',
             'apellidoCliente' : 'APELLIDO CLIENTE',
-            'telefonoCliente' : 'TELEFONO CLIENTE'
+            'telefonoCliente' : 'TELEFONO CLIENTE',
+            'correoCliente' : 'CORREO CLIENTE',
+            'direccionCliente' : 'DIRECCION CLIENTE',
         }
 
         widgets={
@@ -99,6 +101,22 @@ class ClienteForm(forms.ModelForm):
                     'class' : 'form-control',
                     'placeholder' : 'Ingresa telefono Cliente',
                     'id' : 'telefonoCliente'
+                }
+            ),
+
+            'correoCliente' : forms.TextInput(
+                attrs={
+                    'class' : 'form-control',
+                    'placeholder' : 'Ingresa correo Cliente',
+                    'id' : 'correoCliente'
+                }
+            ),
+
+            'direccionCliente' : forms.TextInput(
+                attrs={
+                    'class' : 'form-control',
+                    'placeholder' : 'Ingresa direccion Cliente',
+                    'id' : 'direccionCliente'
                 }
             )
 
